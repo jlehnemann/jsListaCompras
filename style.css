@@ -1,0 +1,17 @@
+@font-face {
+        font-family: Inter;
+        src: url(https://github.com/rsms/inter/blob/master/docs/font-files/Inter-Regular.woff2);
+}
+
+body {
+    background-color: #f4f5fb;
+}
+
+#back-button {
+    color: #ca3884;
+    border: 0;
+    background-color: #f4f5fb;
+    font-family: Inter;
+    font-size: 16pt;
+    font-weight: 600;
+}
