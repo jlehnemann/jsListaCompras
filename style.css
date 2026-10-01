@@ -3,15 +3,68 @@
         src: url(https://github.com/rsms/inter/blob/master/docs/font-files/Inter-Regular.woff2);
 }
 
+
 body {
-    background-color: #f4f5fb;
+    background-color: #F4F5FB;
+    font-family: Inter;
+    margin: 3% 20% 0 20%;
 }
 
 #back-button {
-    color: #ca3884;
+    color: #CA3884;
     border: 0;
-    background-color: #f4f5fb;
-    font-family: Inter;
-    font-size: 16pt;
+    background-color: transparent;  
+    font-size: 14pt;
     font-weight: 600;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+h1 {
+    font-size: 24pt;
+    line-height: 32px;
+}
+
+.div {
+    display: flex;
+    justify-content: center;
+}
+
+#input-item {
+    color: #9CA3AF;
+    border-radius: 12px;
+    border: 2px solid #9CA3AF;
+    width: 100%;
+    line-height: 24px;
+}
+
+#submit-button {
+    background-color: #CA3884;
+    color: #FFFFFF;
+    border-radius: 12px;
+    margin-left: 5%;
+    border: none;
+    line-height: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    body {
+        margin: 20% 7% 0 7%;
+    }
+
+    header {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
