@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 @font-face {
         font-family: Inter;
         src: url(https://github.com/rsms/inter/blob/master/docs/font-files/Inter-Regular.woff2);
@@ -40,6 +44,7 @@ h1 {
     border: 2px solid #9CA3AF;
     width: 100%;
     line-height: 24px;
+    text-indent: 2%;
 }
 
 #submit-button {
@@ -49,6 +54,9 @@ h1 {
     margin-left: 5%;
     border: none;
     line-height: 24px;
+    height: 35px;
+    width: 20%;
+    font-size: 14pt;
 }
 
 @media only screen and (max-width: 600px) {
@@ -61,10 +69,15 @@ h1 {
         display: none;
     }
 
+    .div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #submit-button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+
 }
-
-
-
-
-
-
