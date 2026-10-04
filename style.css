@@ -4,7 +4,7 @@
 
 @font-face {
         font-family: Inter;
-        src: url(https://github.com/rsms/inter/blob/master/docs/font-files/Inter-Regular.woff2);
+        src: url(InterVariable.woff2);
 }
 
 
@@ -22,6 +22,10 @@ body {
     font-weight: 600;
 }
 
+svg {
+    color: #CA3884;
+}
+
 header {
     display: flex;
     justify-content: center;
@@ -31,19 +35,23 @@ header {
 h1 {
     font-size: 24pt;
     line-height: 32px;
+    font-weight: 700;
 }
 
 .div {
     display: flex;
     justify-content: center;
+    padding-bottom: 2%;
 }
 
 .item-list-div {
-    padding-top: 3%;
+    padding-top: 2%;
     flex-direction: column;
-    gap: 10px;
 }
 
+label {
+    padding-left: 1%;
+}
 
 #input-item {
     color: #9CA3AF;
@@ -90,7 +98,6 @@ h1 {
     padding-left: 2%;
     display: flex;
     align-items: center;
-    gap: 5px;
 }
 
 .item-checkbox {
@@ -113,8 +120,6 @@ h1 {
   margin-right:25px;
   margin-left: auto;
 }
-
-
 
 footer {
     background-color: #C93847;
@@ -139,7 +144,7 @@ footer {
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1053px) {
     
     body {
         margin: 20% 7% 0 7%;
@@ -152,6 +157,7 @@ footer {
     .div {
         flex-direction: column;
         gap: 10px;
+        padding-bottom: 6%;
     }
 
     #submit-button {
