@@ -74,7 +74,7 @@ label {
     font-size: 14pt;
 }
 
-#remove-button {
+.remove-button {
     background-image: url('trash_bin.png');
   background-size: cover;
   width: 40px;
