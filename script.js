@@ -17,15 +17,11 @@ function addItem() {
     }
 
     // div's creation and appending
-    let itemListDiv = document.createElement("div")
-    itemListDiv.setAttribute("id", "item-list-div")
-    itemListDiv.classList.add("item-list-div")
     
     let itemDiv = document.createElement("div")
     itemDiv.setAttribute("id", "item-div")
     itemDiv.classList.add("item-div")
 
-    itemListDiv.appendChild(itemDiv)
 
     // get item list total and creates a string for name and id
     let lastItemListNumber = document.getElementsByClassName("item-checkbox").length
@@ -40,15 +36,17 @@ function addItem() {
 
     let divLabel = document.createElement("label")
     divLabel.setAttribute("for", newLastItemListNumberIdName)
+    divLabel.textContent = inputTxt.value
 
     let divButton = document.createElement("button")
     divButton.setAttribute("type", "button")
-    divButton.setAttribute("id", "remove-button")
+    divButton.classList.add("remove-button")
 
     // input, label and button elements append to itemDiv
     itemDiv.append(divCheckbox, divLabel, divButton)
 
-    document.body.appendChild(itemListDiv)
+    // appends itemDiv to HTML body
+    document.body.appendChild(itemDiv)
     
 
     // clears input
