@@ -1,12 +1,14 @@
-// captures
+// captures and conversions
 let inputTxt = document.getElementById('input-item')
 let input = String(inputTxt.value)
 
-let button = document.querySelector("button#submit-button")
 
+//event listeners
 inputTxt.addEventListener("click", () => {
     inputTxt.value = ""
 })
+
+
 
 
 function addItem() {
@@ -16,22 +18,22 @@ function addItem() {
         return
     }
 
-    // div's creation and appending
-    
-    let itemDiv = document.createElement("div")
-    itemDiv.setAttribute("id", "item-div")
-    itemDiv.classList.add("item-div")
-
-
     // get item list total and creates a string for name and id
     let lastItemListNumber = document.getElementsByClassName("item-checkbox").length
-    let newLastItemListNumberIdName = "item" + String(lastItemListNumber + 1)
+    let newLastItemListNumberIdName = "item-" + String(lastItemListNumber + 1)
+    let newLastItemListNumberDivId = "item-div-" + String(lastItemListNumber+1)
+
+    // div's creation and appending
+    let itemDiv = document.createElement("div")
+    itemDiv.setAttribute("id", newLastItemListNumberDivId)
+    itemDiv.classList.add("item-div")
+
 
     // creating input, label and button
     let divCheckbox = document.createElement("input")
     divCheckbox.setAttribute("type", "checkbox")
     divCheckbox.setAttribute("name", newLastItemListNumberIdName)
-    divCheckbox.setAttribute("id", newLastItemListNumberIdName)
+    divCheckbox.setAttribute("id", newLastItemListNumberDivId)
     divCheckbox.classList.add("item-checkbox")
 
     let divLabel = document.createElement("label")
@@ -40,6 +42,7 @@ function addItem() {
 
     let divButton = document.createElement("button")
     divButton.setAttribute("type", "button")
+    divButton.setAttribute("onclick", "removeItem(this)")
     divButton.classList.add("remove-button")
 
     // input, label and button elements append to itemDiv
@@ -53,3 +56,9 @@ function addItem() {
     inputTxt.value = ""
 
 }
+
+function removeItem(btn) {
+    let item = btn.parentElement;
+    item.remove();
+}
+
