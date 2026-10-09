@@ -1,12 +1,19 @@
 // captures and conversions
-let inputTxt = document.getElementById('input-item')
-let input = String(inputTxt.value)
+const inputTxt = document.getElementById('input-item')
+const input = String(inputTxt.value)
 const footer = document.querySelector("footer")
+const itemListDiv = document.querySelector("#item-list-div")
 
 
 //event listeners
 inputTxt.addEventListener("click", () => {
     inputTxt.value = ""
+})
+
+inputTxt.addEventListener("keydown", function(event) {
+    if (event.code === "Enter") {
+        addItem()
+    }
 })
 
 
@@ -18,28 +25,28 @@ function addItem() {
     }
 
     // get item list total and creates a string for name and id
-    let lastItemListNumber = document.getElementsByClassName("item-checkbox").length
-    let newLastItemListNumberIdName = "item-" + String(lastItemListNumber + 1)
-    let newLastItemListNumberDivId = "item-div-" + String(lastItemListNumber+1)
+    const lastItemListNumber = document.getElementsByClassName("item-checkbox").length
+    const newLastItemListNumberIdName = "item-" + String(lastItemListNumber + 1)
+    const newLastItemListNumberDivId = "item-div-" + String(lastItemListNumber+1)
 
     // div's creation and appending
-    let itemDiv = document.createElement("div")
+    const itemDiv = document.createElement("div")
     itemDiv.setAttribute("id", newLastItemListNumberDivId)
     itemDiv.classList.add("item-div")
 
 
     // creating input, label and button
-    let divCheckbox = document.createElement("input")
+    const divCheckbox = document.createElement("input")
     divCheckbox.setAttribute("type", "checkbox")
     divCheckbox.setAttribute("name", newLastItemListNumberIdName)
     divCheckbox.setAttribute("id", newLastItemListNumberDivId)
     divCheckbox.classList.add("item-checkbox")
 
-    let divLabel = document.createElement("label")
+    const divLabel = document.createElement("label")
     divLabel.setAttribute("for", newLastItemListNumberIdName)
     divLabel.textContent = inputTxt.value
 
-    let divButton = document.createElement("button")
+    const divButton = document.createElement("button")
     divButton.setAttribute("type", "button")
     divButton.setAttribute("onclick", "removeItem(this)")
     divButton.classList.add("remove-button")
@@ -48,7 +55,7 @@ function addItem() {
     itemDiv.append(divCheckbox, divLabel, divButton)
 
     // appends itemDiv to HTML body
-    document.body.appendChild(itemDiv)
+    itemListDiv.appendChild(itemDiv)
     
 
     // clears input
@@ -62,15 +69,15 @@ function addItem() {
 function removeItem(btn) {
 
     // removes task
-    let item = btn.parentElement;
+    const item = btn.parentElement;
     item.remove()
 
     footer.classList.remove("hide-footer")
 
-    // makes footer disappear after 5 seconds (5000 ms)
+    // makes footer disappear after 4 seconds (4000 ms)
     setTimeout(() => {
         footer.classList.add("hide-footer")
-    }, 5000)  
+    }, 4000)  
 
 }
 
