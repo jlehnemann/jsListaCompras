@@ -140,6 +140,11 @@ footer {
     padding-left: 2%;
     display: flex;
     align-items: center;
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out,
+                visibility 0.5s ease-in-out;
 }
 
 #label-footer {
@@ -147,8 +152,11 @@ footer {
 }
 
 .hide-footer {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
+
 
 @media only screen and (max-width: 1053px) {
     

@@ -1,14 +1,13 @@
 // captures and conversions
 let inputTxt = document.getElementById('input-item')
 let input = String(inputTxt.value)
+const footer = document.querySelector("footer")
 
 
 //event listeners
 inputTxt.addEventListener("click", () => {
     inputTxt.value = ""
 })
-
-
 
 
 function addItem() {
@@ -57,8 +56,25 @@ function addItem() {
 
 }
 
+ 
+
+
 function removeItem(btn) {
+
+    // removes task
     let item = btn.parentElement;
-    item.remove();
+    item.remove()
+
+    footer.classList.remove("hide-footer")
+
+    // makes footer disappear after 5 seconds (5000 ms)
+    setTimeout(() => {
+        footer.classList.add("hide-footer")
+    }, 5000)  
+
+}
+
+function closeFooter() {
+    footer.classList.add("hide-footer")
 }
 
