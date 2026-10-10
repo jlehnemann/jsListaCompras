@@ -1,22 +1,33 @@
-// captures and conversions
+// Captures and conversions
 const inputTxt = document.getElementById('input-item')
 const input = String(inputTxt.value)
 const footer = document.querySelector("footer")
 const itemListDiv = document.querySelector("#item-list-div")
 
 
-//event listeners
+// Event listeners
+// makes deletes text in input text form
 inputTxt.addEventListener("click", () => {
     inputTxt.value = ""
 })
 
+// activates addItem function when Enter is pressed
 inputTxt.addEventListener("keydown", function(event) {
     if (event.code === "Enter") {
         addItem()
     }
 })
 
+// activates toggleCheckbox function when checkbox is clicked
+itemListDiv.addEventListener("change" ,(event) => {
+    if(event.target.classList.contains("item-checkbox")) {
+        toggleCheckbox(event.target)
+    }
+})
 
+
+
+// Functions
 function addItem() {
     
     if (inputTxt.value.trim() === '') {
@@ -63,13 +74,11 @@ function addItem() {
 
 }
 
- 
-
 
 function removeItem(btn) {
 
     // removes task
-    const item = btn.parentElement;
+    const item = btn.parentElement
     item.remove()
 
     footer.classList.remove("hide-footer")
@@ -83,5 +92,15 @@ function removeItem(btn) {
 
 function closeFooter() {
     footer.classList.add("hide-footer")
+}
+
+function toggleCheckbox(toggle) {
+    const element = toggle.parentElement 
+
+    if (toggle.checked) {
+        itemListDiv.appendChild(element)
+    } else {
+        itemListDiv.prepend(element)
+    } 
 }
 
